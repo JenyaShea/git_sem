@@ -15,11 +15,6 @@ def main():
     g = 53
     a = 63  # это можно хранить в txt
 
-    diffie_hellman = DiffieHellman(a=a, p=p, g=g)
-    client_mixed_key = diffie_hellman.mixed_key
-    private_key = diffie_hellman.generate_key(client_mixed_key)
-    print(client_mixed_key)
-    print(private_key)
 
     sock.send(pickle.dumps((p, g, client_mixed_key)))
     sock.close()
